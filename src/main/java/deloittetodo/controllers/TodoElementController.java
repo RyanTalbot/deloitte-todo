@@ -31,7 +31,7 @@ public class TodoElementController {
         return modelAndView;
     }
 
-    @PostMapping
+    @PostMapping("/todo")
     public String createTodo(@Valid TodoElement todoElement, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-todo";
@@ -42,7 +42,7 @@ public class TodoElementController {
         return "redirect:/";
     }
 
-    @PostMapping
+    @PostMapping("/todo/{id}")
     public String updateTodo(@PathVariable("id") long id, @Valid TodoElement todoElement, BindingResult result, Model model) {
         if (result.hasErrors()) {
             todoElement.setId(id);

@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css} " />
   <title>Update Todo</title>
 </head>
 <body>
-
+<div class="container">
+  <h1 class="text-center">Deloitte Todo</h1>
+  <div class="w-50">
+    <h3>Update Todo</h3>
+    <form action="#" th:action="@{/todo/{id}(id=${todo.id})}" th:object="${todo}" method="POST">
+      <div class="form-group">
+        <label for="description">You can update your task and it's status below</label>
+        <input class="form-control" type="text" th:field="*{description}" id="description"
+               placeholder="Add a description">
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" th:checked="${complete} == true" th:field="*{complete}" id="complete" />
+            Complete
+          </label>
+        </div>
+        <button class="btn btn-success" type="submit">Update</button>
+      </div>
+      <input type="hidden" th:field="*{lastModified}" />
+    </form>
+  </div>
+</div>
+<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
 </body>
 </html>
