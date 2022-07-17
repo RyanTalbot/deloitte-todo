@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 @Entity
-public class TodoEntity {
+public class TodoElement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
@@ -31,9 +31,9 @@ public class TodoEntity {
     @Setter
     private Instant lastModified;
 
-    public TodoEntity() {}
+    public TodoElement() {}
 
-    public TodoEntity(String description) {
+    public TodoElement(String description) {
         this.description = description;
         this.complete = false;
         this.lastModified = Instant.now();
@@ -41,7 +41,7 @@ public class TodoEntity {
 
     @Override
     public String toString() {
-        return String.format("TodoItem{id=%d, description='%s', complete='%s', lastModified='%s'}",
+        return String.format("TodoElement{id=%d, description='%s', complete='%s', lastModified='%s'}",
                 id, description, complete, lastModified);
     }
 }
