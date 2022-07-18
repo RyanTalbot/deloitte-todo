@@ -8,6 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/*
+This class features some filler data which populates
+new logins task lists with sample data.
+ */
+
 @Component
 public class TodoElementFiller implements CommandLineRunner {
     private final Logger logger = LoggerFactory.getLogger(TodoElementFiller.class);

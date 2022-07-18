@@ -16,6 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.time.Instant;
 
+/*
+This controller class features everything needed for managing
+our requests related to our TodoElements.
+
+Based on the request, we then return the appropriate view.
+ */
+
 @Controller
 public class TodoElementController {
     private final Logger logger = LoggerFactory.getLogger(TodoElementController.class);
