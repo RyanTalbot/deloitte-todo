@@ -10,6 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+/*
+This controller class features everything needed for managing
+our form methods.
+ */
+
 @Controller
 public class TodoFormController {
     private final Logger logger = LoggerFactory.getLogger(TodoFormController.class);

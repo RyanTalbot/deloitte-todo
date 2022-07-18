@@ -7,6 +7,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
+/*
+This class builds our TodoElements, nothing crazy going on
+here, it's just properties with constructors.
+ */
+
 @Entity
 public class TodoElement {
     @Id
